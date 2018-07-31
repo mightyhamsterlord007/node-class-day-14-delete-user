@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<% include partials/head %>
+<body>
+
+  <% if (error) { %>
+    <span class="alert alert-danger"> <%= error %> </span>
+  <% } %>
+
+  <form class="form-signin" method="POST" action="/animals/createanimal">
+    <h1 class="h3 mb-3 font-weight-normal">Please create animal</h1>
+    <label for="name" class="sr-only">Name</label>
+    <input type="text" id="name" name="name" class="form-control" placeholder="name" required autofocus>
+    <label for="fur" class="sr-only">Fur</label>
+    <input type="text" id="furname" name="fur" class="form-control" placeholder="fur" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">create animal</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+  </form>
+
+  <% include partials/scripts %>
+</body>
+
+</html>

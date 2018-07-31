@@ -1,0 +1,15 @@
+<form class="form-signin" method="POST" action="/users/update-profile?_method=PUT">
+    <% if(!error){ %>
+
+    <% } else { %>  
+      <span class="alert alert-danger"> <%= error %> </span>
+    <% } %>  
+    <br />
+    <h1 class="h3 mb-3 font-weight-normal">Edit Name</h1>
+    <label for="name" class="sr-only">Name</label>
+    <input type="text" id="name" name="name" class="form-control" placeholder="name" value="<%= currentUser.name %>" required autofocus>
+    <label for="inputPassword" class="sr-only">Edit Password</label>
+    <input type="text" id="inputPassword" name="password" class="form-control" placeholder="Password">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">update profile</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+  </form>
