@@ -82,5 +82,17 @@ module.exports = {
       callback(null, updated);
       return;
     });
+  },
+  deleteUser: function(params, callback) {
+
+    User.findByIdAndRemove(params, function(err) {
+      if (err) {
+        callback(err, null);
+        return;
+      }
+      callback(null, 'Successfully Deleted');
+      return;
+    });
+
   }
 };

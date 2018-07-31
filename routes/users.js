@@ -127,7 +127,22 @@ router.put('/update-profile', function(req, res, next) {
 
 });
 
+router.get('/delete-user', function(req, res) {
+  res.render('delete');
+});
+
 router.delete('/delete-user', function(req, res) {
+
+  userController.deleteUser( req.session.userID, function(err) {
+    if (err) {
+      res.json({
+        message: 'Fail to delete user',
+        data: err
+      });
+    }
+
+    res.render('index', { title: 'Express', currentUser: '', message: '' });
+  })
 
 });
 
